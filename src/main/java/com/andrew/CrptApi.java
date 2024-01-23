@@ -21,7 +21,6 @@ public class CrptApi {
         this.semaphore = new Semaphore(requestLimit);
         this.apiUrl = "https://ismp.crpt.ru/api/v3/lk/documents/create";
     }
-
     public void createDocument(Document document, String signature) {
         try {
             if (semaphore.tryAcquire()) {
